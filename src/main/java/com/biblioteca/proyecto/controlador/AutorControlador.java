@@ -67,4 +67,14 @@ public class AutorControlador {
         return "autor_modificar.html";
     }
 
+    @PostMapping("/modificar/{id}")
+    public String modificar(@PathVariable String id, String nombre, ModelMap modelo){
+        try {
+            autorServicio.modificarAutor(id, nombre);
+            return "redirect:../lista";
+        } catch (Exception ex) {
+            modelo.put("error", ex.getMessage());
+            return "autor_modificar.html";
+        }
+    }
 }
