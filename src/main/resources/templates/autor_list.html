@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" th:href="@{/css/estilo_autor.css}" />
+
+  <title>Autores</title>
+</head>
+
+<body>
+  <!-- Navbar de Biblioteca con dropdowns incorporados -->
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid backN">
+      <a class="navbar-brand" href="#">Biblioteca</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active aEspecial" aria-current="page" th:href="@{/}">Inicio</a>
+          </li>
+
+          <!-- Dropdown de Libros-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Libros</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" th:href="@{/libro/registrar}">Crear Libro</a>
+              </li>
+              <li>
+                <a class="dropdown-item" th:href="@{/libro/lista}">Listar Libros</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Dropdown de Editoriales-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Editoriales
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" th:href="@{/editorial/registrar}">Crear Editorial</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Listar Editoriales</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Dropdown de Autores -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Autores
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" th:href="@{/autor/registrar}">Crear Autor</a>
+              </li>
+              <li>
+                <a class="dropdown-item" th:href="@{/autor/lista}">Listar Autor</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Lista los autores y los muestra en una tabla -->
+  <div>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Id del autor</th>
+          <th scope="col">Nombre del autor</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody th:each="autor : ${autores}">
+        <tr>
+          <th scope="row" th:text="${autor.id}"></th>
+          <td th:text="${autor.nombre}"></td>
+          <td>
+            <a th:href="@{/autor/modificar}"><i class="fas fa-feather-alt"></i> Modificar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Mensaje de exito al mostrar autores. -->
+
+    <div th:if="${exito != null}" class="card text-white bg-success mb-3 mt-3 mensajeExito">
+      <div class="card-body">
+        <h5 class="card-title">Exito!</h5>
+        <p class="card-text" th:text="${exito}"></p>
+      </div>
+    </div>
+
+    <!-- Mensaje de error al mostrar autores -->
+
+    <div th:if="${error != null}" class="card text-white bg-danger mb-3 mensajeError">
+      <div class="card-body">
+        <h5 class="card-title">Error 👎</h5>
+        <p class="card-text" th:text="${error}"></p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

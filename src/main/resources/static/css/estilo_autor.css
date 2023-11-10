@@ -1,0 +1,30 @@
+body{
+    background-color: black;
+}
+
+.navbar{
+    border-radius: 30px;
+    padding: 0px;
+}
+
+.imgFondo{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+
+
+.backN{
+    background-color: rgba(33, 33, 78, 0.377);
+}
+
+.nav-link{
+    color: azure !important;
+}
+
+
+.navbar-brand{
+    color: azure;
+}
+
