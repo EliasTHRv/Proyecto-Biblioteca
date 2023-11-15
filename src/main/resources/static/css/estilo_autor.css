@@ -12,19 +12,32 @@ body{
     height: 100%;
     border-radius: 30px;
 }
-
-
+.botoneslr{
+   list-style: none;
+   display: inline-block; 
+}
 
 .backN{
     background-color: rgba(33, 33, 78, 0.377);
+}
+
+.text-muted{
+    color: azure !important;
 }
 
 .nav-link{
     color: azure !important;
 }
 
+.card-title{
+    color: azure;
+}
 
 .navbar-brand{
     color: azure;
 }
 
+.imgicono{
+    display: flex;
+    width: 3%;
+}

@@ -10,7 +10,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.biblioteca.proyecto.repositorios.EditorialRepositorio;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

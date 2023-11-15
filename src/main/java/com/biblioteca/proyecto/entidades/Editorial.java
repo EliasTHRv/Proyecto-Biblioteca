@@ -1,9 +1,9 @@
 
 package com.biblioteca.proyecto.entidades;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
@@ -37,5 +37,5 @@ public class Editorial {
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
-    
+
 }

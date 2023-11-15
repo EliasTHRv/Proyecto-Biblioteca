@@ -3,7 +3,7 @@ package com.biblioteca.proyecto.servicios;
 import com.biblioteca.proyecto.entidades.Editorial;
 import com.biblioteca.proyecto.exepciones.MiException;
 import com.biblioteca.proyecto.repositorios.EditorialRepositorio;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

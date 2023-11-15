@@ -4,11 +4,11 @@
  */
 package com.biblioteca.proyecto.entidades;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.util.Date;
 
 /**
@@ -17,18 +17,18 @@ import java.util.Date;
  */
 @Entity
 public class Libro {
-    
+
     @Id
     private Long ISBN;
     private String titulo;
-    private Integer ejemplares; 
-    
+    private Integer ejemplares;
+
     @Temporal(TemporalType.DATE)
     private Date alta;
-    
+
     @ManyToOne
     private Autor autor;
-    
+
     @ManyToOne
     private Editorial editorial;
 
@@ -82,6 +82,5 @@ public class Libro {
     public void setEditorial(Editorial editorial) {
         this.editorial = editorial;
     }
-    
-    
+
 }
